@@ -1,0 +1,106 @@
+---
+title: "Assmat Gouvieux Cartographie"
+format: html
+editor: visual
+execute:
+  message: false
+  warning: false
+  echo: false
+---
+
+```{r setup}
+# Libraries nécessaires
+library(readxl)
+library(tidyverse)
+library(sf)
+library(leaflet)
+library(tidygeocoder)
+```
+
+## Cartographie des assistantes maternelles de la ville de Gouvieux
+
+
+Bienvenue sur cette page interactive dédiée à la cartographie des assistantes maternelles de la ville de Gouvieux.  
+
+Les données géographiques présentées ici sont issues d’un fichier qualifié et géocodé, permettant de visualiser précisément la localisation de chaque assistante maternelle.  
+
+En complément, une carte des densités des enfants âgés de 0 à 3 ans, selon le dernier recensement INSEE, est proposée pour mieux comprendre la répartition des besoins en accueil petite enfance sur le territoire.  
+
+
+```{r}
+data_ass_mat_geocod <- read_excel("data/data_ass_mat_geocod.xlsx")
+
+data_ass_mat_sf <- data_ass_mat_geocod |> 
+  filter(!is.na(lat) & !is.na(lon)) |> 
+  st_as_sf(coords = c("lon", "lat"), crs = 4326)
+
+
+```
+
+On considère également le nombre d'enfants ayant entre 0 et 3 ans dans le recensement publié sur l'INSEE en mars 2022.
+
+```{r}
+
+
+# Affichage Leaflet
+leaflet(data_ass_mat_sf) |> 
+  addTiles() |> 
+  addMarkers(
+    popup = ~paste0("<strong>", PRENOMS, " ", NOMS, "</strong><br>",
+                    "full_address ", ADRESSE, "<br>",
+                    "Tél : ", TEL, "<br>",
+                    "Email : ", MAIL)
+  )
+```
+
+
+..........................................................................
+
+
+```{r}
+df_geo_def <- read_excel("data/df_geo_def.xlsx")
+
+
+
+# Exemple de valeurs représentatives
+valeurs_legende <- c(1, 5, 12)
+rayons_legende <- sqrt(valeurs_legende) * 2 + 3  
+couleur_legende <- "#31688e"  
+espace_vertical <- 40  
+
+# Construction de la légende HTML avec cercles bien espacés
+html_legende <- paste0(
+  "<div style='font-weight:bold; margin-bottom:4px;'>Nombre d'enfants de 0 à 3 ans<br/>(par carré de 200 mètres)</div>",
+  "<svg width='120' height='", length(rayons_legende) * espace_vertical, "'>",
+  paste0(
+    mapply(function(r, v, i) {
+      y_pos <- i * espace_vertical - 10  # Décalage vertical progressif
+      paste0(
+        "<circle cx='20' cy='", y_pos, "' r='", round(r), 
+        "' fill='", couleur_legende, "' fill-opacity='0.7' stroke='black' stroke-width='0.5'/>",
+        "<text x='45' y='", y_pos + 4, "' font-size='12'>", v, "</text>"
+      )
+    }, rayons_legende, valeurs_legende, seq_along(rayons_legende)),
+    collapse = ""
+  ),
+  "</svg>"
+)
+
+
+# Carte leaflet avec cercles
+leaflet(df_geo_def) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addCircleMarkers(
+    radius = ~sqrt(Ind_0_3)*2 + 3,  
+    color = "#1f78b4",  # couleur fixe ou définie plus haut
+    stroke = FALSE,
+    fillOpacity = 0.7,
+    popup = ~paste0("Ind_0_3 : ", Ind_0_3)
+  ) %>%
+  addControl(html = html_legende, position = "bottomright")
+
+
+
+
+
+```
