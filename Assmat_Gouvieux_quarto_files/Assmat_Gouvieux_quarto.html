@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Assmat Gouvieux Cartographie</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Assmat_Gouvieux_quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Assmat_Gouvieux_quarto_files/libs/quarto-html/quarto.js"></script>
+<script src="Assmat_Gouvieux_quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="Assmat_Gouvieux_quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Assmat_Gouvieux_quarto_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Assmat_Gouvieux_quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Assmat_Gouvieux_quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Assmat_Gouvieux_quarto_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Assmat_Gouvieux_quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Assmat_Gouvieux_quarto_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="Assmat_Gouvieux_quarto_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="Assmat_Gouvieux_quarto_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="Assmat_Gouvieux_quarto_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="Assmat_Gouvieux_quarto_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="Assmat_Gouvieux_quarto_files/libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="Assmat_Gouvieux_quarto_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="Assmat_Gouvieux_quarto_files/libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="Assmat_Gouvieux_quarto_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="Assmat_Gouvieux_quarto_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="Assmat_Gouvieux_quarto_files/libs/leaflet-binding-2.2.2/leaflet.js"></script>
+
+<script src="Assmat_Gouvieux_quarto_files/libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+
+<script src="Assmat_Gouvieux_quarto_files/libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assmat Gouvieux Cartographie</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cartographie-des-assistantes-maternelles-de-la-ville-de-gouvieux" class="level2">
+<h2 class="anchored" data-anchor-id="cartographie-des-assistantes-maternelles-de-la-ville-de-gouvieux">Cartographie des assistantes maternelles de la ville de Gouvieux</h2>
+<p>Bienvenue sur cette page interactive dédiée à la cartographie des assistantes maternelles de la ville de Gouvieux.</p>
+<p>Les données géographiques présentées ici sont issues d’un fichier qualifié et géocodé, permettant de visualiser précisément la localisation de chaque assistante maternelle.</p>
+<p>En complément, une carte des densités des enfants âgés de 0 à 3 ans, selon le dernier recensement INSEE, est proposée pour mieux comprendre la répartition des besoins en accueil petite enfance sur le territoire.</p>
+<p>On considère également le nombre d’enfants ayant entre 0 et 3 ans dans le recensement publié sur l’INSEE en mars 2022.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-4e509fdb1e34a8e50b22" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4e509fdb1e34a8e50b22">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[49.1809315,49.1880933,49.187952,49.1885381,49.1897772,49.1886283,49.2011758,49.1909827,49.1855146,49.1890471,49.1847902,49.195987,49.1892782,49.1894814,49.1870985,49.188933,49.1880238,49.2031424,49.1898352,49.186041,49.180942,49.1801646,49.1843109,49.1908761,49.1885381,49.1912695,49.1870997,49.1835462,49.1779534,49.1878192,49.186519,49.1911172,49.1979195,49.1865547,49.1822143,49.1879478,49.1887776,49.1913704,49.1897934,49.1772002,49.1914438,49.1898404],[2.4118902,2.4116803,2.4116405,2.4112137,2.4112414,2.4120617,2.402152,2.4125269,2.4250255,2.4195485,2.4214738,2.418061,2.4182613,2.4104822,2.4188111,2.4105743,2.4142081,2.4004213,2.4117295,2.4240684,2.4155932,2.4181011,2.421896,2.4174586,2.4112137,2.408662,2.408068,2.4082684,2.4211697,2.4119762,2.4143904,2.4115329,2.4173742,2.4245752,2.4128906,2.441457,2.4121161,2.4193077,2.4120267,2.4220472,2.4137065,2.4177339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<strong>Anne AUGER<\/strong><br>full_address 16 avenue de la république<br>Tél : 06.71.75.63.73<br>Email : anne.auger208@orange.fr","<strong>Sandrine BERNARD<\/strong><br>full_address 2 rue de la planchette<br>Tél : NA<br>Email : sandrinesandrine724@gmail.com","<strong>Annick BLANGY<\/strong><br>full_address 4 rue de la planchette<br>Tél : 06.81.99.41.04<br>Email : blangy.annick@orange.fr","<strong>M. Elise BOD<\/strong><br>full_address 1 place des courtils<br>Tél : 06.78.09.09.51<br>Email : marylou.bod@gmail.com","<strong>Laurence BOZEC<\/strong><br>full_address 15 rue des tertres<br>Tél : 06.17.32.35.35<br>Email : lolo.bobo@live.fr","<strong>Christine BRIERE<\/strong><br>full_address 2 place des courtils<br>Tél : 03.44.58.76.43 // 06.10.51.11.34<br>Email : brierechristine@aol.com","<strong>Sandra CARVALHO DA COSTA<\/strong><br>full_address 23 avenue de toutevoie<br>Tél : 06.21.31.69.18<br>Email : tatiana.alves@hotmail.fr","<strong>Lavideth CHHIM<\/strong><br>full_address 26 impasse des pommiers<br>Tél : 03.44.57.58.20<br>Email : lavideth@hotmail.com","<strong>Laëticia COUTELLIER<\/strong><br>full_address 1 Square Etienne Jodelle<br>Tél : 09.54.28.26.80//06.61.67.44.94<br>Email : laeticia.coutellier@outlook.fr","<strong>Sandrina DA COSTA<\/strong><br>full_address 4 Clos St Roman<br>Tél : 06.11.61.11.56<br>Email : sandrinegalego@yahoo.fr","<strong>Lysiane DEGUY<\/strong><br>full_address 22 rue gambetta<br>Tél : 03.64.22.38.27 // 06.66.91.76.24<br>Email : deguylysiane@gmail.com","<strong>Sandrine DISTRETTI<\/strong><br>full_address 39 A rue Corbier Thiebaut<br>Tél : 07.68.11.85.64<br>Email : gillesdistretti@sfr.fr","<strong>Virginie DUFRENNE<\/strong><br>full_address 17 rue des repas<br>Tél : 09.71.27.25.22<br>Email : virginie.dufrenne@gmail.com","<strong>Karène FERRETTI<\/strong><br>full_address 3 place des tertres<br>Tél : 03.44.21.92.30 // 06.26.27.04.73<br>Email : krn60@free.fr","<strong>Aurélie FLOBERT<\/strong><br>full_address 45 rue colliau<br>Tél : 09.86.71.43.76<br>Email : orelietom@hotmail.fr","<strong>Isabelle GUERIN<\/strong><br>full_address 3 rue de la côtière<br>Tél : 03.44.57.16.58 // 07.69.50.82.24<br>Email : isabelguerin@hotmail.fr","<strong>Magalie HEUGEBAERT-ENGEL<\/strong><br>full_address 1 avenue des courtils<br>Tél : 07.88.77.78.57<br>Email : magengel@hotmail.fr","<strong>Salima JIVALILA<\/strong><br>full_address 29 Avenue de Toutevoie<br>Tél : 06.52.00.16.26<br>Email : revtiana@hotmail.fr","<strong>Nathalie JOUAULT<\/strong><br>full_address 24 rue des tertres<br>Tél : 03.44.57.86.89 // 06.72.89.95.83<br>Email : nathalie.jouault67@orange.fr","<strong>Anne LAFEUILLE<\/strong><br>full_address 1 square Joachim du Bellay<br>Tél : 07.88.25.77.68<br>Email : anne.lafeuille@sfr.fr","<strong>Fabienne LAFILE<\/strong><br>full_address 7 avenue Aristide Briand<br>Tél : 03.60.02.54.34 // 06.27.23.73.12<br>Email : fabienne.lafile@sfr.fr","<strong>Katia LISKA<\/strong><br>full_address 40 rue de lamorlaye<br>Tél : 03.60.02.68.01 // 06.81.84.30.51<br>Email : katia.liska82@gmail.com","<strong>Doris LE TANNOU<\/strong><br>full_address 2 chemin de la goursaule<br>Tél : 03.44.58.04.15<br>Email : dorisletannou@yahoo.fr","<strong>Catherine LECLERC<\/strong><br>full_address 12 rue thiers<br>Tél : 06.88.71.48.08<br>Email : cathy.tutin@gmail.com","<strong>Sylvie LEDUC<\/strong><br>full_address 1 place des courtils<br>Tél : 09.51.77.99.94<br>Email : sylvie.leduc0901@gmail.com","<strong>Fabienne MAGNIEN<\/strong><br>full_address 15 allée Pierre et Marie Curie<br>Tél : 03.44.58.21.30<br>Email : magnien.amandine@outlook.fr","<strong>Sandy MAILLET<\/strong><br>full_address 7 Rue des Basses Garennes<br>Tél : 07.77.36.53.83<br>Email : maillet.sandy@gmail.com","<strong>Sylvie MAILLOT<\/strong><br>full_address 4 allée des cèdres<br>Tél : 03.44.58.22.37<br>Email : sylviemaillot0@gmail.com","<strong>Nathalie MALLEDANT<\/strong><br>full_address 59 rue de lamorlaye<br>Tél : 03.44.58.93.21 // 06.80.16.77.09<br>Email : nath.fafa@yahoo.fr","<strong>Inna MARCELLET<\/strong><br>full_address 1 Rue de la Planchette<br>Tél : 06.76.50.09.06<br>Email : inna.marcellet@gmail.com","<strong>Catherine MASSON<\/strong><br>full_address 1 rue Paul Bert<br>Tél : 03.44.58.04.85<br>Email : massoncathy60@gmail.com","<strong>M. Hélène MICHEL<\/strong><br>full_address 8 Allée Henri Becquerel<br>Tél : 03.60.46.91.88 // 06.71.50.50.71<br>Email : marie@chorten.fr","<strong>Laurence MICHELET<\/strong><br>full_address chemin du trou patrie<br>Tél : 06.82.93.69.25<br>Email : lorence60@orange.fr","<strong>Nelly MONSTERLEET<\/strong><br>full_address 6 square Joachim du Bellay<br>Tél : 06.13.55.95.06<br>Email : lilybie1@hotmail.fr","<strong>Laureen PHILIPPE<\/strong><br>full_address 21  Avenue de la République<br>Tél : 06.87.11.13.99<br>Email : l.s.l@live.fr","<strong>Patricia PLATROZ<\/strong><br>full_address 4bis La grande Traversière<br>Tél : NA<br>Email : patemajul@aol.com","<strong>Stéphanie POIRET<\/strong><br>full_address 4 place des courtils<br>Tél : 06.19.06.08.96<br>Email : stephanie.poiret@live.fr","<strong>Angélique RAIMBAULT<\/strong><br>full_address 47 Rue de la Treille<br>Tél : 06.62.52.96.93<br>Email : angelique.raimbault@outlook.fr","<strong>Christine SENEPART<\/strong><br>full_address 20 rue des tertres<br>Tél : 03.44.58.02.39 // 06.76.94.08.96<br>Email : franck.senepart@hotmail.fr","<strong>Sabrina VIALLE<\/strong><br>full_address 76 bis rue de Lamorlaye<br>Tél : 03.44.57.67.33 // 06.10.74.21.98<br>Email : sabvialle@gmail.com","<strong>Conceicao VIEIRA<\/strong><br>full_address 19 Rue de L'Abreuvoir<br>Tél : 03.60.46.06.98 // 07.88.64.63.97<br>Email : sao.vi@hotmail.fr","<strong>NA 53 ASS.MAT<\/strong><br>full_address NA<br>Tél : NA<br>Email : NA"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[49.1772002,49.2031424],"lng":[2.4004213,2.441457]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>………………………………………………………………..</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-9e30aece6d24277abdbc" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9e30aece6d24277abdbc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[49.17068819063326,49.17136746371278,49.17173726916108,49.17247608344879,49.17321383555214,49.17297029783506,49.17315530788942,49.17334025155893,49.17407936237409,49.17290430282396,49.17308998447064,49.17327559973715,49.17346114862274,49.17457304789583,49.17475813209438,49.17494314990613,49.17512810133034,49.17586724313711,49.17394863565064,49.17413459060676,49.17432047918292,49.17450630137842,49.17487774662444,49.17599048914956,49.17636087223396,49.17654596419338,49.17673098976326,49.17747042813291,49.17555032754599,49.17573635668084,49.17592231943377,49.17610821580406,49.17629404579095,49.17666550661163,49.17685113744394,49.17759299690244,49.17777829579568,49.17796352829891,49.17814869441138,49.17833379413237,49.1785188274611,49.17907352908659,49.18073404854472,49.17715193528695,49.17733803860595,49.17752407554106,49.17771004609156,49.1778959502567,49.17808178803573,49.17845326443254,49.17900998111359,49.17919542056055,49.17938079361622,49.17956610027992,49.17975134055087,49.17993651442835,49.18012162191165,49.18252197698705,49.17912574749552,49.17931179223163,49.17986952811304,49.18005530729539,49.18024102008746,49.18042666648851,49.18061224649778,49.18079776011459,49.18098320733813,49.18116858816771,49.18135390260256,49.18153915064197,49.18172433228522,49.18190944753153,49.18209449638019,49.18227947883044,49.18246439488158,49.18375694800235,49.18394133283404,49.18412565126,49.1843099032795,49.1844940888918,49.18240001555527,49.1825855369521,49.18277099195297,49.18295638055717,49.18314170276393,49.18332695857255,49.18351214798226,49.18369727099235,49.18388232760207,49.18406731781067,49.18462189002251,49.18480661461936,49.18499127281142,49.18517586459797,49.18536038997827,49.1855448489516,49.18572924151722,49.18591356767437,49.18609782742237,49.18628202076044,49.18437331162646,49.18455877440542,49.18474417078496,49.18492950076438,49.18511476434288,49.18529996151982,49.1854850922944,49.1856701566659,49.18585515463358,49.1860400861967,49.18622495135455,49.18640975010636,49.18659448245143,49.18677914838899,49.18696374791834,49.18714828103871,49.18733274774941,49.18751714804966,49.18770148193875,49.18788574941595,49.18806995048053,49.18634655469573,49.18653195885138,49.18671729660416,49.18690256795334,49.18708777289822,49.18727291143801,49.18745798357203,49.18764298929952,49.18782792861973,49.18801280153194,49.18819760803544,49.18838234812944,49.18875162908611,49.18893616994728,49.187948854487,49.18813433282427,49.1883197447567,49.1885050902836,49.18869036940417,49.18887558211772,49.18906072842351,49.18924580832076,49.18943082180878,49.18980064955414,49.19017021165371,49.19146158695661,49.19164580347638,49.18843636050193,49.18917976588332,49.18955107014945,49.18992210879131,49.19010752850131,49.19029288180303,49.19047816869573,49.19066338917869,49.19084854325116,49.1910336309124,49.19121865216169,49.19343372675275,49.19115320167379,49.19170988259721,49.19189531008548,49.19226596582832,49.19245119408144,49.19263635592132,49.19282145134728,49.19300648035857,49.19337633913418,49.19294094996548,49.19368308950951,49.19442416643428,49.19534901821006,49.19553378930718,49.19700956686395,49.19528542372669,49.19547086677374,49.19565624340437,49.19584155361784,49.19602679741342,49.19621197479036,49.19639708574795,49.19713686536988,49.1973216442196,49.19633072356424,49.19707319105094,49.19725864187848,49.19744402628687,49.1976293442754,49.1978145958433,49.19799978098988,49.19818489971438,49.19836995201604,49.19855493789416,49.1989247103768,49.19910949697983,49.19886095621527,49.19904641482401,49.20015777159188,49.20034276523221,49.20052769244553,49.20071255323111,49.20064871921999,49.2008341856107],[2.438762381798953,2.422104642812547,2.427565043442482,2.438486069652375,2.44940739545086,2.41909744737914,2.421827717512451,2.424558006411453,2.435479349535103,2.39151775137548,2.394247931438676,2.396978130334815,2.399708348057431,2.416090049387347,2.418820398714383,2.421550766816189,2.42428115368631,2.435202888720601,2.380318774102171,2.383048976709483,2.385779198178211,2.388509438501896,2.393969975688291,2.410352039094373,2.415812877339681,2.418543324641365,2.421273790720442,2.43219584268142,2.377310021402558,2.380040303088618,2.382770603645192,2.385500923065818,2.388231261344027,2.393691994447369,2.39642238925957,2.407344156761118,2.410074645667374,2.412805153373042,2.415535679871661,2.418266225156765,2.420996789221889,2.429188594032713,2.453765020490751,2.374301066134034,2.377031426895883,2.379761806537341,2.382492205051947,2.385222622433239,2.387953058674745,2.393413987712576,2.40160552255939,2.404336071826492,2.407066639908563,2.409797226799144,2.412527832491763,2.415258456979961,2.417989100257264,2.453489169728143,2.376752806839378,2.379483284445007,2.387674830490716,2.390405383560686,2.39313595548058,2.395866546243937,2.398597155844291,2.401327784275173,2.404058431530122,2.406789097602672,2.409519782486357,2.412250486174703,2.414981208661254,2.417711949939535,2.420442710003079,2.423173488845419,2.425904286460086,2.445020394844498,2.447751342404879,2.450482308679351,2.453213293661443,2.455944297344687,2.398319294091861,2.401050020516744,2.403780765768316,2.40651152984012,2.409242312725684,2.411973114418536,2.414703934912214,2.417434774200249,2.42016563227617,2.422896509133513,2.431089252329348,2.433820204247664,2.436551174915047,2.439282164325025,2.442013172471129,2.444744199346887,2.447475244945823,2.450206309261469,2.452937392287349,2.455668494016994,2.400772231280768,2.403503074537746,2.406233936617577,2.408964817513798,2.411695717219934,2.414426635729522,2.41715757303609,2.419888529133169,2.42261950401429,2.42535049767298,2.428081510102766,2.430812541297189,2.433543591249768,2.436274659954029,2.439005747403507,2.441736853591723,2.44446797851221,2.447199122158493,2.449930284524097,2.452661465602547,2.455392665387374,2.403225357835072,2.405956317931713,2.408687296847371,2.411418294575568,2.414149311109846,2.416880346443728,2.419611400570744,2.422342473484423,2.425073565178297,2.427804675645891,2.430535804880735,2.433266952876356,2.438729305124041,2.441460509363157,2.400216576362854,2.402947615656971,2.405678673779199,2.408409750723072,2.411140846482114,2.41387196104986,2.416603094419838,2.419334246585571,2.422065417540593,2.427527815792614,2.43299028912412,2.45210953628758,2.454840932209134,2.380821277197492,2.391745411745836,2.397207592185607,2.402669848000105,2.405401004156703,2.408132179137572,2.410863372936239,2.413594585546238,2.41632581696109,2.419057067174326,2.421788336179476,2.454565027653888,2.394198405288017,2.402392054861143,2.405123309060894,2.410585873934616,2.413317184595647,2.416048514064159,2.418779862333684,2.421511229397742,2.426974019883577,2.393920292523615,2.404845588488438,2.415771185725721,2.429428605305559,2.432160145561212,2.454013142594595,2.401836392123604,2.404567842436003,2.407299311580559,2.410030799550801,2.412762306340254,2.415493831942447,2.418225376350895,2.429151741917816,2.431883380260444,2.390632517468135,2.401558522518356,2.404290070900256,2.407021638116944,2.409753224161945,2.412484829028791,2.415216452710999,2.417948095202095,2.420679756495606,2.423411436585052,2.428874853125846,2.431606589564237,2.401280627417675,2.404012273877862,2.420402547998153,2.423134326184285,2.425866123162499,2.428597938926323,2.401002706818227,2.403734451365489],[3,3.632455532033676,7,3,5,3,3.894427190999916,4.095445115010332,3,4.673320053068151,4.264911064067352,3.632455532033676,3.632455532033676,3.632455532033676,3.894427190999916,4.414213562373095,3,3.632455532033676,4.673320053068151,4.788854381999831,4.549193338482967,4.414213562373095,3.632455532033676,3.632455532033676,3,4.414213562373095,5.82842712474619,3.632455532033676,4.264911064067352,4.414213562373095,4.264911064067352,4.549193338482967,4.095445115010332,3,3,5.82842712474619,6.464101615137754,3.632455532033676,5.82842712474619,7.898979485566356,3.632455532033676,3.632455532033676,3,3.894427190999916,3.632455532033676,3.632455532033676,3.632455532033676,3.632455532033676,3.632455532033676,3.632455532033676,3.894427190999916,3.632455532033676,4.414213562373095,5,6.464101615137754,5.82842712474619,5,3.894427190999916,3,3,3,3,3,3,3,3,5,5.82842712474619,3,5.82842712474619,9,6.464101615137754,4.264911064067352,3,3.632455532033676,3,3,3,3,3.632455532033676,3,3,5,6.464101615137754,9.928203230275509,7.898979485566356,7.47213595499958,7.898979485566356,3,4.414213562373095,3.894427190999916,4.549193338482967,5.82842712474619,5.82842712474619,3,5.82842712474619,5.82842712474619,5.82842712474619,5.82842712474619,3,3,5,7,6.464101615137754,5.82842712474619,6.464101615137754,5.82842712474619,6.464101615137754,6.464101615137754,9.6332495807108,3.894427190999916,5.190890230020664,5.82842712474619,6.464101615137754,7.47213595499958,5,7,3,5,3,5.82842712474619,5.82842712474619,7,8.65685424949238,10.21110255092798,7,7.47213595499958,7.898979485566356,9.6332495807108,3,3.894427190999916,4.788854381999831,3.894427190999916,5,3,3,3,3,7.898979485566356,6.741657386773941,7.47213595499958,5.82842712474619,6.464101615137754,5,4.414213562373095,3.894427190999916,3,4.897366596101028,4.095445115010332,4.414213562373095,4.673320053068151,3,4.264911064067352,6.464101615137754,6.464101615137754,9.6332495807108,6.464101615137754,5.280350850198277,3.894427190999916,4.095445115010332,4.264911064067352,3.632455532033676,5.097617696340303,3.894427190999916,3.894427190999916,4.673320053068151,3,4.414213562373095,3.632455532033676,3.632455532033676,4.095445115010332,3.632455532033676,3,3.632455532033676,3.632455532033676,4.414213562373095,3.894427190999916,4.673320053068151,4.673320053068151,5,6.464101615137754,3,4.095445115010332,5,4.414213562373095,4.897366596101028,3,6.464101615137754,5.449489742783178,4.414213562373095,4.549193338482967,6.03315017762062,4.897366596101028,5.529822128134704,5.097617696340303,4.264911064067352,4.788854381999831,3.894427190999916,5.898275349237888,5.366431913239847,5.190890230020664,4.788854381999831,7,3.894427190999916],null,null,{"interactive":true,"className":"","stroke":false,"color":"#1f78b4","weight":5,"opacity":0.5,"fill":true,"fillColor":"#1f78b4","fillOpacity":0.7},null,null,["Ind_0_3 : 0","Ind_0_3 : 0.1","Ind_0_3 : 4","Ind_0_3 : 0","Ind_0_3 : 1","Ind_0_3 : 0","Ind_0_3 : 0.2","Ind_0_3 : 0.3","Ind_0_3 : 0","Ind_0_3 : 0.7","Ind_0_3 : 0.4","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.2","Ind_0_3 : 0.5","Ind_0_3 : 0","Ind_0_3 : 0.1","Ind_0_3 : 0.7","Ind_0_3 : 0.8","Ind_0_3 : 0.6","Ind_0_3 : 0.5","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0","Ind_0_3 : 0.5","Ind_0_3 : 2","Ind_0_3 : 0.1","Ind_0_3 : 0.4","Ind_0_3 : 0.5","Ind_0_3 : 0.4","Ind_0_3 : 0.6","Ind_0_3 : 0.3","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 2","Ind_0_3 : 3","Ind_0_3 : 0.1","Ind_0_3 : 2","Ind_0_3 : 6","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0","Ind_0_3 : 0.2","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.2","Ind_0_3 : 0.1","Ind_0_3 : 0.5","Ind_0_3 : 1","Ind_0_3 : 3","Ind_0_3 : 2","Ind_0_3 : 1","Ind_0_3 : 0.2","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 1","Ind_0_3 : 2","Ind_0_3 : 0","Ind_0_3 : 2","Ind_0_3 : 9","Ind_0_3 : 3","Ind_0_3 : 0.4","Ind_0_3 : 0","Ind_0_3 : 0.1","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0.1","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 1","Ind_0_3 : 3","Ind_0_3 : 12","Ind_0_3 : 6","Ind_0_3 : 5","Ind_0_3 : 6","Ind_0_3 : 0","Ind_0_3 : 0.5","Ind_0_3 : 0.2","Ind_0_3 : 0.6","Ind_0_3 : 2","Ind_0_3 : 2","Ind_0_3 : 0","Ind_0_3 : 2","Ind_0_3 : 2","Ind_0_3 : 2","Ind_0_3 : 2","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 1","Ind_0_3 : 4","Ind_0_3 : 3","Ind_0_3 : 2","Ind_0_3 : 3","Ind_0_3 : 2","Ind_0_3 : 3","Ind_0_3 : 3","Ind_0_3 : 11","Ind_0_3 : 0.2","Ind_0_3 : 1.2","Ind_0_3 : 2","Ind_0_3 : 3","Ind_0_3 : 5","Ind_0_3 : 1","Ind_0_3 : 4","Ind_0_3 : 0","Ind_0_3 : 1","Ind_0_3 : 0","Ind_0_3 : 2","Ind_0_3 : 2","Ind_0_3 : 4","Ind_0_3 : 8","Ind_0_3 : 13","Ind_0_3 : 4","Ind_0_3 : 5","Ind_0_3 : 6","Ind_0_3 : 11","Ind_0_3 : 0","Ind_0_3 : 0.2","Ind_0_3 : 0.8","Ind_0_3 : 0.2","Ind_0_3 : 1","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 0","Ind_0_3 : 6","Ind_0_3 : 3.5","Ind_0_3 : 5","Ind_0_3 : 2","Ind_0_3 : 3","Ind_0_3 : 1","Ind_0_3 : 0.5","Ind_0_3 : 0.2","Ind_0_3 : 0","Ind_0_3 : 0.9","Ind_0_3 : 0.3","Ind_0_3 : 0.5","Ind_0_3 : 0.7","Ind_0_3 : 0","Ind_0_3 : 0.4","Ind_0_3 : 3","Ind_0_3 : 3","Ind_0_3 : 11","Ind_0_3 : 3","Ind_0_3 : 1.3","Ind_0_3 : 0.2","Ind_0_3 : 0.3","Ind_0_3 : 0.4","Ind_0_3 : 0.1","Ind_0_3 : 1.1","Ind_0_3 : 0.2","Ind_0_3 : 0.2","Ind_0_3 : 0.7","Ind_0_3 : 0","Ind_0_3 : 0.5","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.3","Ind_0_3 : 0.1","Ind_0_3 : 0","Ind_0_3 : 0.1","Ind_0_3 : 0.1","Ind_0_3 : 0.5","Ind_0_3 : 0.2","Ind_0_3 : 0.7","Ind_0_3 : 0.7","Ind_0_3 : 1","Ind_0_3 : 3","Ind_0_3 : 0","Ind_0_3 : 0.3","Ind_0_3 : 1","Ind_0_3 : 0.5","Ind_0_3 : 0.9","Ind_0_3 : 0","Ind_0_3 : 3","Ind_0_3 : 1.5","Ind_0_3 : 0.5","Ind_0_3 : 0.6","Ind_0_3 : 2.3","Ind_0_3 : 0.9","Ind_0_3 : 1.6","Ind_0_3 : 1.1","Ind_0_3 : 0.4","Ind_0_3 : 0.8","Ind_0_3 : 0.2","Ind_0_3 : 2.1","Ind_0_3 : 1.4","Ind_0_3 : 1.2","Ind_0_3 : 0.8","Ind_0_3 : 4","Ind_0_3 : 0.2"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addControl","args":["<div style='font-weight:bold; margin-bottom:4px;'>Nombre d'enfants de 0 à 3 ans<br/>(par carré de 200 mètres)<\/div><svg width='120' height='120'><circle cx='20' cy='30' r='5' fill='#31688e' fill-opacity='0.7' stroke='black' stroke-width='0.5'/><text x='45' y='34' font-size='12'>1<\/text><circle cx='20' cy='70' r='7' fill='#31688e' fill-opacity='0.7' stroke='black' stroke-width='0.5'/><text x='45' y='74' font-size='12'>5<\/text><circle cx='20' cy='110' r='10' fill='#31688e' fill-opacity='0.7' stroke='black' stroke-width='0.5'/><text x='45' y='114' font-size='12'>12<\/text><\/svg>","bottomright",null,"info legend"]}],"limits":{"lat":[49.17068819063326,49.2008341856107],"lng":[2.374301066134034,2.455944297344687]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
